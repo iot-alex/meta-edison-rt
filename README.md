@@ -39,12 +39,20 @@ Add a line to the layers so that the BBLAYERS variable looks like this:
         .../edison-src/meta-edison-rt \
         \
     "
-        
+The rootfs size needs to be increased. Edit:
+
+    .../edison-src/meta-intel-edison/meta-intel-edison-distro/recipes-core/images/edison-image.bb
     
-Then the usual "bitbake edison-image" should work and add the new features. To natively build Qt apps, set up the environment first with:
+Change the rootfs size line to be:
+
+    IMAGE_ROOTFS_SIZE = "1048576"        
+    
+Then the usual "bitbake edison-image" should work and add the new features. To natively build Qt apps on the Edison, set up the environment first with:
 
     source /usr/share/qtopia/environment-setup
     
 Then run qmake and make as usual.
+
+To set up for cross development, see the blog post at http://wp.me/p4qcHg-bE.
 
 
