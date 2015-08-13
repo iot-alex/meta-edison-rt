@@ -6,5 +6,6 @@ IMAGE_INSTALL += "git"
 
 IMAGE_INSTALL += "nano"
 IMAGE_INSTALL += "packagegroup-core-qt4e"
+IMAGE_INSTALL += "packagegroup-qte-toolchain-target"
 IMAGE_INSTALL += "cmake"
 

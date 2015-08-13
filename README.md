@@ -11,6 +11,7 @@ Specific additions are:
     IMAGE_INSTALL += "git"
     IMAGE_INSTALL += "nano"
     IMAGE_INSTALL += "packagegroup-core-qt4e"
+    IMAGE_INSTALL += "packagegroup-qte-toolchain-target"
     IMAGE_INSTALL += "cmake"
     
 ### Installation
@@ -40,6 +41,10 @@ Add a line to the layers so that the BBLAYERS variable looks like this:
     "
         
     
-Then the usual "bitbake edison-image" should work and add the new features.
+Then the usual "bitbake edison-image" should work and add the new features. To natively build Qt apps, set up the environment first with:
+
+    source /usr/share/qtopia/environment-setup
+    
+Then run qmake and make as usual.
 
 
